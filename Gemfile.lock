@@ -1,16 +1,29 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    autoprefixer-rails (5.1.11)
+      execjs
+      json
     backports (3.6.4)
+    bootstrap-sass (3.3.4.1)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     byebug (2.7.0)
       columnize (~> 0.3)
       debugger-linecache (~> 1.2)
     coderay (1.1.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.9.1.1)
     columnize (0.9.0)
     debugger-linecache (1.2.0)
     dotenv (2.0.1)
+    execjs (2.5.2)
     foreman (0.78.0)
       thor (~> 0.19.1)
+    hike (1.2.3)
+    json (1.8.2)
     method_source (0.8.2)
     multi_json (1.11.0)
     pry (0.9.12.6)
@@ -31,10 +44,19 @@ GEM
       rack (>= 1.0)
       rack-test (>= 0.5)
     rake (10.4.2)
+    sass (3.4.13)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
+    sinatra-asset-pipeline (0.7.0)
+      coffee-script (~> 2.3)
+      rake (~> 10.0)
+      sass (~> 3.1)
+      sinatra (~> 1.4)
+      sprockets (~> 2.12)
+      sprockets-helpers (~> 1.1)
+      sprockets-sass (~> 1.2)
     sinatra-contrib (1.4.2)
       backports (>= 2.0)
       multi_json
@@ -42,7 +64,21 @@ GEM
       rack-test
       sinatra (~> 1.4.0)
       tilt (~> 1.3)
+    slim (3.0.3)
+      temple (~> 0.7.3)
+      tilt (>= 1.3.3, < 2.1)
     slop (3.6.0)
+    sprockets (2.12.3)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+    sprockets-helpers (1.1.0)
+      sprockets (~> 2.0)
+    sprockets-sass (1.3.1)
+      sprockets (~> 2.0)
+      tilt (~> 1.1)
+    temple (0.7.5)
     thor (0.19.1)
     tilt (1.4.1)
 
@@ -50,6 +86,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
+  coffee-script
   dotenv
   foreman
   pry-byebug
@@ -57,4 +95,6 @@ DEPENDENCIES
   racksh
   rake
   sinatra
+  sinatra-asset-pipeline
   sinatra-contrib
+  slim
