@@ -1,4 +1,8 @@
 require 'sinatra'
+require 'dotenv'
+
+
+Dotenv.load
 
 module Fyber
   class App < Sinatra::Base
