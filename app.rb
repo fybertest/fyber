@@ -7,6 +7,8 @@ require 'bootstrap-sass'
 
 Dotenv.load
 
+Dir.glob(File.expand_path('services/**/*.rb')).each { |file| require file }
+
 module Fyber
   class App < Sinatra::Base
     register Sinatra::AssetPipeline
@@ -29,6 +31,8 @@ module Fyber
       end
 
       unless form.failed?
+        service = Fyber::Offers.call(params)
+        @offers = service.offers
       end
 
       slim :index
