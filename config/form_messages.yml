@@ -1,0 +1,5 @@
+DEFAULT:
+  uid:
+    present: Can't be blank
+  page:
+    present: Must be greater than 0

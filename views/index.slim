@@ -1,1 +1,17 @@
 h1 Fyber
+form.form-horizontal  method="post" action="/"
+  - [:uid, :pub0, :page].each do |attr|
+    .form-group class="#{'has-error' if form.failed_on?(attr)}"
+      label.col-sm-2.control-label
+        = attr.capitalize
+      .col-sm-6
+        input#inputUid.form-control placeholder=attr.capitalize value=params[attr] name=attr
+      .col-sm-4
+        - if form.failed_on?(attr)
+          - form.messages(:index, attr).each do |message|
+            span.help-block= message
+
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      button.btn.btn-default type="submit" Submit
+
