@@ -1,17 +1,41 @@
-h1 Fyber
-form.form-horizontal  method="post" action="/"
-  - [:uid, :pub0, :page].each do |attr|
-    .form-group class="#{'has-error' if form.failed_on?(attr)}"
-      label.col-sm-2.control-label
-        = attr.capitalize
-      .col-sm-6
-        input#inputUid.form-control placeholder=attr.capitalize value=params[attr] name=attr
-      .col-sm-4
-        - if form.failed_on?(attr)
-          - form.messages(:index, attr).each do |message|
-            span.help-block= message
+h1.text-center Fyber
 
-  .form-group
-    .col-sm-offset-2.col-sm-10
-      button.btn.btn-default type="submit" Submit
+.panel.panel-primary
+  .panel-heading Form
+  .panel-body
+    form.form-horizontal  method="post" action="/"
+      - {uid: 'Player1', pub0: nil, page: 1}.each do |(attr, v)|
+        .form-group class="#{'has-error' if form.failed_on?(attr)}"
+          label.col-sm-3.control-label
+            = attr.capitalize
+          .col-sm-6
+            input#inputUid.form-control placeholder=attr.capitalize value=(params[attr] || v) name=attr
+          .col-sm-3
+            - if form.failed_on?(attr)
+              - form.messages(:index, attr).each do |message|
+                span.help-block= message
 
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          button.btn.btn-primary type="submit" Submit
+
+.panel.panel-info
+  .panel-heading Response
+  .panel-body
+    - if @offers
+      - if @offers.empty?
+        h4.text-center No offers available
+      - else
+        table.table
+          thead
+            tr
+              th.col-sm-6 Title
+              th.col-sm-3 Thumbnail
+              th.col-sm-3 Payout
+          tbody
+            - @offers.each do |offer|
+              tr
+                th= offer['title']
+                td
+                  img src=offer['thumbnail']['lowres']
+                td= offer['payout']
