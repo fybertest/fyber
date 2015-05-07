@@ -22,3 +22,8 @@ gem 'sinatra-formkeeper'
 group :development do
   gem 'foreman'
 end
+
+
+group :test do
+  gem 'rspec'
+end

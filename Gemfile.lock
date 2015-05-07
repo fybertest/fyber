@@ -18,6 +18,7 @@ GEM
     coffee-script-source (1.9.1.1)
     columnize (0.9.0)
     debugger-linecache (1.2.0)
+    diff-lcs (1.2.5)
     domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.0.1)
@@ -58,6 +59,19 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
+    rspec (3.2.0)
+      rspec-core (~> 3.2.0)
+      rspec-expectations (~> 3.2.0)
+      rspec-mocks (~> 3.2.0)
+    rspec-core (3.2.3)
+      rspec-support (~> 3.2.0)
+    rspec-expectations (3.2.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-mocks (3.2.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-support (3.2.2)
     sass (3.4.13)
     sinatra (1.4.6)
       rack (~> 1.4)
@@ -117,6 +131,7 @@ DEPENDENCIES
   racksh
   rake
   rest-client
+  rspec
   sinatra
   sinatra-asset-pipeline
   sinatra-contrib
