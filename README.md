@@ -1,0 +1,1 @@
+# Fyber Ruby Challenge [![Build Status](https://travis-ci.org/fybertest/fyber.svg?branch=master)](https://travis-ci.org/fybertest/fyber) [![Code Climate](https://codeclimate.com/github/fybertest/fyber/badges/gpa.svg)](https://codeclimate.com/github/fybertest/fyber)
