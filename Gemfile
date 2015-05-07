@@ -10,6 +10,7 @@ gem 'puma'
 gem 'rake'
 gem 'dotenv'
 gem 'racksh'
+gem 'rest-client'
 
 ## FRONT
 gem 'slim'
