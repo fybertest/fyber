@@ -14,6 +14,8 @@ module Fyber
 
     form_messages File.expand_path(File.join(File.dirname(__FILE__), 'config', 'form_messages.yml'))
 
+    set :assets_precompile, %w(application.css *.png *.jpg *.svg *.eot *.ttf *.woff)
+
     get '/' do
       slim :index
     end
