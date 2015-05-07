@@ -16,6 +16,7 @@ gem 'slim'
 gem 'sinatra-asset-pipeline'
 gem 'coffee-script'
 gem 'bootstrap-sass'
+gem 'sinatra-formkeeper'
 
 group :development do
   gem 'foreman'
